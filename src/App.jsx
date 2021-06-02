@@ -1,5 +1,5 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
+import TodoList from './features/todoList/TodoList';
 
 //* Import style
 import { Wrapper, Header } from './App.style';
@@ -8,7 +8,7 @@ export default function App() {
     return (
         <Wrapper>
             <Header>
-                <Counter />
+                <TodoList />
             </Header>
         </Wrapper>
     );

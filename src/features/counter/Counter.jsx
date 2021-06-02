@@ -7,7 +7,7 @@ import { decrement, increment, incrementByAmount, selectCount } from './counterS
 //* Import styles
 import { Group, Button, Value, Input } from './Counter.style';
 
-export function Counter() {
+export default function Counter() {
     //* lấy count(value) từ state và hàm dispatch
     const count = useSelector(selectCount);
     const dispatch = useDispatch();
