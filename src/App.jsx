@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoList from './features/todoList/TodoList';
+import Todo from './features/todoList/Todo';
 
 //* Import style
 import { Wrapper, Header } from './App.style';
@@ -8,7 +8,7 @@ export default function App() {
     return (
         <Wrapper>
             <Header>
-                <TodoList />
+                <Todo />
             </Header>
         </Wrapper>
     );

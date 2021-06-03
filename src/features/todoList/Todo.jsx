@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectTodos, addTodo, removeTodo } from './todoListSlice';
+import { getTodos, addTodo, removeTodo } from './todoSlice';
 
 export default function TodoList() {
     const dispatch = useDispatch();
-    const initialTodos = useSelector(selectTodos);
+    const todos = useSelector(getTodos);
 
     const [newTodo, setNewTodo] = useState('');
 
@@ -23,7 +23,7 @@ export default function TodoList() {
                 <button type='submit'>Thêm</button>
             </form>
             <ul>
-                {initialTodos.map((todo, idx) => {
+                {todos.map((todo, idx) => {
                     return (
                         <li onClick={() => dispatch(removeTodo(todo))} key={idx.toString()}>
                             {todo}

@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 //* Import action
-import { decrement, increment, incrementByAmount, selectCount } from './counterSlice';
+import { decrement, increment, incrementByAmount, getCount } from './counterSlice';
 
 //* Import styles
 import { Group, Button, Value, Input } from './Counter.style';
 
 export default function Counter() {
-    //* lấy count(value) từ state và hàm dispatch
-    const count = useSelector(selectCount);
+    const count = useSelector(getCount);
     const dispatch = useDispatch();
 
     //* Khởi tạo
