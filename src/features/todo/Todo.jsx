@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 //* Import action
-import { getTodos, addTodo, removeTodo } from './todoSlice';
+import { selectTodo, addTodo, removeTodo } from './todoSlice';
 
 export default function TodoList() {
     const dispatch = useDispatch();
-    const todos = useSelector(getTodos);
+    const todos = useSelector(selectTodo);
 
     const [newTodo, setNewTodo] = useState('');
 
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(addTodo(newTodo));
         setNewTodo('');
-    }
+    };
 
     return (
         <div>

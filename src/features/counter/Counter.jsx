@@ -1,19 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 //* Import action
-import { decrement, increment, incrementByAmount, getCount } from './counterSlice';
+import { decrement, increment, incrementByAmount, selectCount, fetchCount } from './counterSlice';
 
 //* Import styles
 import { Group, Button, Value, Input } from './Counter.style';
 
 export default function Counter() {
-    const count = useSelector(getCount);
+    const count = useSelector(selectCount);
     const dispatch = useDispatch();
 
     //* Khởi tạo
     const [incrementAmount, setIncrementAmount] = useState('2');
     const incrementValue = Number(incrementAmount) || 0;
+
+    useEffect(() => {
+        dispatch(fetchCount());
+    }, [dispatch]);
 
     return (
         <>

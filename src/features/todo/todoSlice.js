@@ -9,12 +9,10 @@ export const todoSlice = createSlice({
     initialState,
     reducers: {
         addTodo: (state, action) => {
-            const newState = { ...state, value: [...state.value, action.payload] };
-            return newState;
+            state.value = [...state.value, action.payload];
         },
         removeTodo: (state, action) => {
-            const newState = { ...state, value: [...state.value].filter((todo) => todo !== action.payload) };
-            return newState;
+            state.value = [...state.value].filter((todo) => todo !== action.payload);
         }
     }
 });
@@ -23,7 +21,7 @@ export const todoSlice = createSlice({
 export const { addTodo, removeTodo } = todoSlice.actions;
 
 //* export state (todos ở trong file store)
-export const getTodos = (state) => state.todo.value;
+export const selectTodo = (state) => state.todo.value;
 
 //* export reducer
 export const todoReducer = todoSlice.reducer;
