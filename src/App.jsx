@@ -1,5 +1,5 @@
 import React from 'react';
-import Todo from './features/todoList/Todo';
+import Todo from './features/todo/Todo';
 
 //* Import style
 import { Wrapper, Header } from './App.style';
