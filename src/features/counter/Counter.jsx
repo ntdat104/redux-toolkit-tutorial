@@ -20,7 +20,8 @@ export default function Counter() {
     }, [dispatch]);
 
     return (
-        <>
+        <div>
+            <h1>Counter</h1>
             <Group>
                 <Button onClick={() => dispatch(decrement())}>-</Button>
                 <Value>{count}</Value>
@@ -30,6 +31,6 @@ export default function Counter() {
                 <Input value={incrementAmount} onChange={(e) => setIncrementAmount(e.target.value)} />
                 <Button onClick={() => dispatch(incrementByAmount(incrementValue))}>Add Amount</Button>
             </Group>
-        </>
+        </div>
     );
 }

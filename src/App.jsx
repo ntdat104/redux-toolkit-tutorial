@@ -1,5 +1,4 @@
 import React from 'react';
-import Todo from './features/todo/Todo';
 import Counter from './features/counter/Counter';
 
 //* Import style
@@ -10,7 +9,6 @@ export default function App() {
         <Wrapper>
             <Header>
                 <Counter />
-                <Todo />
             </Header>
         </Wrapper>
     );
